@@ -1,3 +1,7 @@
+" 				 VIMRC CONFIG
+"                                 Sean Wade
+" ======================================================================================= "
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -29,6 +33,7 @@ filetype plugin indent on    " required
 
 set number
 filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 filetype plugin indent on
 set showcmd
 set mouse=a
@@ -90,9 +95,9 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-let g:ycm_min_num_of_chars_for_completion = 1
+" let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
-let g:ycm_server_keep_logfiles = 1
+" let g:ycm_server_keep_logfiles = 1
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 0
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
