@@ -14,7 +14,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
 
 call vundle#end() 
 filetype plugin indent on    " required
@@ -98,9 +100,13 @@ set wildignore+=*/coverage/*
 " let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 " let g:ycm_server_keep_logfiles = 1
-let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_complete_in_strings = 1
 let g:ycm_complete_in_comments = 1 
 let g:ycm_seed_identifiers_with_syntax = 1
+
+" supertab
+" for use with omni complete
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
