@@ -1,9 +1,10 @@
-" 				 VIMRC CONFIG
-"                                 Sean Wade
+" ======================================================================================= "
+" 				 VIMRC CONFIG                                             "
+"                                 Sean Wade 						  "
 " ======================================================================================= "
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              					    " be iMproved, required
+filetype off                  					    " required
 
 " -------VUNDLE----------------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,7 +20,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 
 call vundle#end() 
-filetype plugin indent on    " required
+filetype plugin indent on    
+
+" required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -97,6 +100,7 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
+" YouCompleteMe
 " let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 " let g:ycm_server_keep_logfiles = 1
