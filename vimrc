@@ -12,12 +12,14 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
+Plugin 'kshenoy/vim-signature'
 
 call vundle#end() 
 filetype plugin indent on    
@@ -86,6 +88,9 @@ nmap T O<ESC>j
 
 " Plugin Settings
 " ===============================
+
+" NerdTree
+let NERDTreeQuitOnOpen = 1
 
 " Powerline
 set laststatus=2
