@@ -90,6 +90,9 @@ nmap T O<ESC>j
 " Plugin Settings
 " ===============================
 
+" NerdTree
+let NERDTreeQuitOnOpen = 1
+
 " Powerline
 set laststatus=2
 
