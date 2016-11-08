@@ -15,7 +15,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
-<<<<<<< HEAD
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -24,14 +23,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 Plugin 'danro/rename.vim'
 Plugin 'pangloss/vim-javascript'
-=======
-"Plugin 'davidhalter/jedi-vim'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
-Plugin 'danro/rename.vim'
-Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
->>>>>>> 52d3915963442a0a5b8b3213c086fc00a5f74b90
 
 call vundle#end() 
 filetype plugin indent on    
@@ -123,19 +115,11 @@ set wildignore+=*/coverage/*
 " let g:ycm_min_num_of_chars_for_completion = 1
 " let g:ycm_auto_trigger = 1
 " let g:ycm_server_keep_logfiles = 1
-<<<<<<< HEAD
 " let g:ycm_autoclose_preview_window_after_completion = 1
 " nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " let g:ycm_complete_in_strings = 1
 " let g:ycm_complete_in_comments = 1 
 " let g:ycm_seed_identifiers_with_syntax = 1
-=======
-let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_complete_in_strings = 1
-let g:ycm_complete_in_comments = 1 
-let g:ycm_seed_identifiers_with_syntax = 1
->>>>>>> 52d3915963442a0a5b8b3213c086fc00a5f74b90
 
 " supertab
 " for use with omni complete
