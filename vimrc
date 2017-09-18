@@ -16,9 +16,13 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
+<<<<<<< HEAD
 Plugin 'chrisbra/csv.vim'
+=======
+>>>>>>> ab2da79d55929d7165b0ce33761582a6b2d7240b
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 Plugin 'danro/rename.vim'
@@ -58,18 +62,22 @@ syntax on
 " better escape
 inoremap jk <esc>
 
-" copy and paste
+" for qtcreator
+map rr :run<CR>
+
+" copy and paste with TMUX
 if $TMUX == ''
 	set clipboard+=unnamed
 endif
 set pastetoggle=<F2>
+set clipboard=unnamedplus
 
 " remap the leader key
 let mapleader=","
 
-" easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
+" easier moving between buffers
+map <Leader>n <esc>:bp<CR>
+map <Leader>m <esc>:bn<CR>
 
 " map sort function
 vnoremap <Leader>s :sort<CR>o
@@ -89,9 +97,9 @@ set ignorecase
 set smartcase
 
 " removes search highlight
-noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
+" noremap <C-n> :nohl<CR>
+" vnoremap <C-n> :nohl<CR>
+" inoremap <C-n> :nohl<CR>
 
 " make blank lines in normal mode
 nmap t o<ESC>k
@@ -127,17 +135,19 @@ set wildignore+=*/coverage/*
 let b:csv_arrange_use_all_rows = 1
 
 " YouCompleteMe
-" let g:ycm_min_num_of_chars_for_completion = 1
-" let g:ycm_auto_trigger = 1
-" let g:ycm_server_keep_logfiles = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" let g:ycm_complete_in_strings = 1
-" let g:ycm_complete_in_comments = 1 
-" let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_comments = 1 
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " supertab
 " for use with omni complete
+<<<<<<< HEAD
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 set completeopt-=preview
@@ -161,3 +171,6 @@ let g:tex_flavor='latex'
 " vim latex preview
 let g:livepreview_previewer = 'open -a Skim'
 autocmd Filetype tex setl updatetime=1000
+=======
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+>>>>>>> ab2da79d55929d7165b0ce33761582a6b2d7240b
