@@ -18,12 +18,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'chrisbra/csv.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
 Plugin 'danro/rename.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Raimondi/delimitMate'
+" Plugin 'xuhdev/vim-latex-live-preview'
 
 call vundle#end() 
 filetype plugin indent on    
@@ -41,6 +42,10 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
+
+" STUFF
+set exrc
+let &path.="src/include,/usr/include/AL,"
 
 set number
 filetype plugin on
@@ -92,6 +97,13 @@ inoremap <C-n> :nohl<CR>
 nmap t o<ESC>k
 nmap T O<ESC>j
 
+" Trying some latex stuff
+" LaTeX (rubber) macro for compiling
+nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
+
+" View PDF macro; '%:r' is current file's root (base) name.
+nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
+
 " Plugin Settings
 " ===============================
 
@@ -111,6 +123,9 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
+" CSV
+let b:csv_arrange_use_all_rows = 1
+
 " YouCompleteMe
 " let g:ycm_min_num_of_chars_for_completion = 1
 " let g:ycm_auto_trigger = 1
@@ -124,3 +139,25 @@ set wildignore+=*/coverage/*
 " supertab
 " for use with omni complete
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+set completeopt-=preview
+
+" VIM - LATEX
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+" vim latex preview
+let g:livepreview_previewer = 'open -a Skim'
+autocmd Filetype tex setl updatetime=1000
