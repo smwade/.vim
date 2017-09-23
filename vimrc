@@ -10,25 +10,18 @@ filetype off                  					    " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'Yggdroot/indentLine'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-" Plugin 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
-<<<<<<< HEAD
-Plugin 'chrisbra/csv.vim'
-=======
->>>>>>> ab2da79d55929d7165b0ce33761582a6b2d7240b
-Plugin 'mattn/emmet-vim'
-Plugin 'ervandew/supertab'
-Plugin 'danro/rename.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'Raimondi/delimitMate'
-" Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'VundleVim/Vundle.vim' " package manager
+Plugin 'scrooloose/nerdtree' " awesome directory
+Plugin 'Lokaltog/vim-powerline' " the line at the bottom
+Plugin 'Yggdroot/indentLine' " shows indent lines
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy searching 
+Plugin 'scrooloose/nerdcommenter' "easy comments
+Plugin 'chrisbra/csv.vim' " pretty csv files
+Plugin 'mattn/emmet-vim' " HTML/CSS magic
+Plugin 'ervandew/supertab' " insert mode tab complete 
+Plugin 'danro/rename.vim' " adds :saveas x
+Plugin 'pangloss/vim-javascript' " make javascript nice
+Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
 
 call vundle#end() 
 filetype plugin indent on    
@@ -47,7 +40,6 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
 
-" STUFF
 set exrc
 let &path.="src/include,/usr/include/AL,"
 
@@ -70,7 +62,7 @@ if $TMUX == ''
 	set clipboard+=unnamed
 endif
 set pastetoggle=<F2>
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 " remap the leader key
 let mapleader=","
@@ -147,30 +139,5 @@ let g:ycm_seed_identifiers_with_syntax = 1
 
 " supertab
 " for use with omni complete
-<<<<<<< HEAD
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 set completeopt-=preview
-
-" VIM - LATEX
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-" vim latex preview
-let g:livepreview_previewer = 'open -a Skim'
-autocmd Filetype tex setl updatetime=1000
-=======
-" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
->>>>>>> ab2da79d55929d7165b0ce33761582a6b2d7240b
