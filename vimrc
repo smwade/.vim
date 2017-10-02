@@ -22,6 +22,7 @@ Plugin 'ervandew/supertab' " insert mode tab complete
 Plugin 'danro/rename.vim' " adds :saveas x
 Plugin 'pangloss/vim-javascript' " make javascript nice
 Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
+Plugin 'vim-latex/vim-latex' " LaTex magic
 
 call vundle#end() 
 filetype plugin indent on    
@@ -45,8 +46,8 @@ let &path.="src/include,/usr/include/AL,"
 
 set number
 filetype plugin on
+filetype indent on
 set omnifunc=syntaxcomplete#Complete
-filetype plugin indent on
 set showcmd
 set mouse=a
 syntax on
@@ -97,15 +98,14 @@ set smartcase
 nmap t o<ESC>k
 nmap T O<ESC>j
 
-" Trying some latex stuff
-" LaTeX (rubber) macro for compiling
-nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
-
-" View PDF macro; '%:r' is current file's root (base) name.
-nnoremap <leader>v :!mupdf %:r.pdf &<CR><CR>
-
 " Plugin Settings
 " ===============================
+
+" Latex
+let g:tex_conceal = "" " stops rendering latex inline
+let g:tex_flavor='latex' " after vim 7 default .tex to plaintex, switches
+set grepprg=grep\ -nH\ $*
+
 
 " NerdTree
 let NERDTreeQuitOnOpen = 1
