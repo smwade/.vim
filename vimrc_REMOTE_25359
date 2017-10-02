@@ -22,7 +22,6 @@ Plugin 'ervandew/supertab' " insert mode tab complete
 Plugin 'danro/rename.vim' " adds :saveas x
 Plugin 'pangloss/vim-javascript' " make javascript nice
 Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
-Plugin 'vim-latex/vim-latex' " LaTex magic
 Plugin 'Valloric/YouCompleteMe' "autocomplete
 
 call vundle#end() 
@@ -99,12 +98,6 @@ nmap T O<ESC>j
 
 " Plugin Settings
 " ===============================
-
-" Latex
-let g:tex_conceal = "" " stops rendering latex inline
-let g:tex_flavor='latex' " after vim 7 default .tex to plaintex, switches
-set grepprg=grep\ -nH\ $*
-
 
 " NerdTree
 let NERDTreeQuitOnOpen = 1

@@ -23,7 +23,6 @@ Plugin 'danro/rename.vim' " adds :saveas x
 Plugin 'pangloss/vim-javascript' " make javascript nice
 Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
 Plugin 'vim-latex/vim-latex' " LaTex magic
-Plugin 'Valloric/YouCompleteMe' "autocomplete
 
 call vundle#end() 
 filetype plugin indent on    
@@ -46,7 +45,9 @@ set exrc
 let &path.="src/include,/usr/include/AL,"
 
 set number
-filetype plugin indent on
+filetype plugin on
+filetype indent on
+set omnifunc=syntaxcomplete#Complete
 set showcmd
 set mouse=a
 syntax on
@@ -62,7 +63,7 @@ if $TMUX == ''
 	set clipboard+=unnamed
 endif
 set pastetoggle=<F2>
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 " remap the leader key
 let mapleader=","
@@ -126,9 +127,9 @@ set wildignore+=*/coverage/*
 let b:csv_arrange_use_all_rows = 1
 
 " YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_auto_trigger = 0
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
