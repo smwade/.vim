@@ -1,5 +1,5 @@
 " PYTHON SETTINGS
-cmap go w \| !python %
+cmap go w \| !python3 %
 vnoremap # :s#^#\##<cr>
 vnoremap -# :s#^\###<cr>
 
