@@ -23,7 +23,6 @@ Plugin 'danro/rename.vim' " adds :saveas x
 Plugin 'pangloss/vim-javascript' " make javascript nice
 Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
 Plugin 'vim-latex/vim-latex' " LaTex magic
-Plugin 'Valloric/YouCompleteMe' "autocomplete
 
 call vundle#end() 
 filetype plugin indent on    
@@ -96,6 +95,12 @@ set smartcase
 " make blank lines in normal mode
 nmap t o<ESC>k
 nmap T O<ESC>j
+
+" Gvim specific settings here
+if has('gui_running')
+    set guioptions= " no sidebars
+    colorscheme desert
+endif
 
 " Plugin Settings
 " ===============================
