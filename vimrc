@@ -10,19 +10,19 @@ filetype off                  					    " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim' " package manager
-Plugin 'scrooloose/nerdtree' " awesome directory
-Plugin 'Lokaltog/vim-powerline' " the line at the bottom
-Plugin 'Yggdroot/indentLine' " shows indent lines
-Plugin 'ctrlpvim/ctrlp.vim' " fuzzy searching 
-Plugin 'scrooloose/nerdcommenter' "easy comments
-Plugin 'chrisbra/csv.vim' " pretty csv files
-Plugin 'mattn/emmet-vim' " HTML/CSS magic
-Plugin 'ervandew/supertab' " insert mode tab complete 
-Plugin 'danro/rename.vim' " adds :saveas x
-Plugin 'pangloss/vim-javascript' " make javascript nice
-Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
-Plugin 'vim-latex/vim-latex' " LaTex magic
+Plugin 'VundleVim/Vundle.vim' 		" Package manager
+Plugin 'scrooloose/nerdtree' 		" Awesome directory navigation
+Plugin 'Lokaltog/vim-powerline' 	" The line at the bottom
+Plugin 'Yggdroot/indentLine' 		" Shows indent lines
+Plugin 'ctrlpvim/ctrlp.vim' 		" Fuzzy searching 
+Plugin 'scrooloose/nerdcommenter' 	" Easy comments
+Plugin 'chrisbra/csv.vim' 		" Pretty csv files
+Plugin 'mattn/emmet-vim' 		" HTML/CSS magic and snippets
+Plugin 'ervandew/supertab' 		" Insert mode tab complete 
+Plugin 'danro/rename.vim' 		" Adds :saveas x
+Plugin 'pangloss/vim-javascript' 	" Make javascript nice
+Plugin 'Raimondi/delimitMate' 		" Auto close brackets in insert mode
+Plugin 'vim-latex/vim-latex' 		" LaTex magic
 
 call vundle#end() 
 filetype plugin indent on    
@@ -41,9 +41,6 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
 
-set exrc
-let &path.="src/include,/usr/include/AL,"
-
 set number
 filetype plugin indent on
 set showcmd
@@ -60,6 +57,7 @@ map rr :run<CR>
 if $TMUX == ''
 	set clipboard+=unnamed
 endif
+
 set pastetoggle=<F2>
 set clipboard=unnamed
 
@@ -106,14 +104,12 @@ endif
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
-" Plugin Settings
-" ===============================
+" --------Plugin Settings------------------------------------------------------------------
 
 " Latex
 let g:tex_conceal = "" " stops rendering latex inline
 let g:tex_flavor='latex' " after vim 7 default .tex to plaintex, switches
 set grepprg=grep\ -nH\ $*
-
 
 " NerdTree
 let NERDTreeQuitOnOpen = 1
