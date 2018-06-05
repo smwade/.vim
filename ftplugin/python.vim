@@ -1,5 +1,6 @@
 " PYTHON SETTINGS
 cmap go w \| !python3 %
+cmap pytest w \| !python -m unittest
 vnoremap # :s#^#\##<cr>
 vnoremap -# :s#^\###<cr>
 

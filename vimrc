@@ -43,9 +43,6 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
 
-set exrc
-let &path.="src/include,/usr/include/AL,"
-
 set number
 filetype plugin indent on
 set showcmd
@@ -62,6 +59,7 @@ map rr :run<CR>
 if $TMUX == ''
 	set clipboard+=unnamed
 endif
+
 set pastetoggle=<F2>
 set clipboard=unnamed
 
@@ -117,14 +115,16 @@ if (empty($TMUX))
   endif
 endif
 
-" Plugin Settings
-" ===============================
+" better YML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
+" --------Plugin Settings------------------------------------------------------------------
 
 " Latex
 let g:tex_conceal = "" " stops rendering latex inline
 let g:tex_flavor='latex' " after vim 7 default .tex to plaintex, switches
 set grepprg=grep\ -nH\ $*
-
 
 " NerdTree
 let NERDTreeQuitOnOpen = 1
