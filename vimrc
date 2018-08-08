@@ -97,7 +97,14 @@ nmap t o<ESC>k
 nmap T O<ESC>j
 
 " For colorscheme
-colorscheme onedark
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+    colorscheme onedark
+  endif
+endif
+
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
