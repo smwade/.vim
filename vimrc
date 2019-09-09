@@ -10,24 +10,22 @@ filetype off                  					    " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim' " package manager
-Plugin 'joshdick/onedark.vim' " Colorscheme
-Plugin 'scrooloose/nerdtree' " awesome directory
-Plugin 'Lokaltog/vim-powerline' " the line at the bottom
-Plugin 'sheerun/vim-polyglot' " Language pack
-Plugin 'Yggdroot/indentLine' " shows indent lines
-Plugin 'ctrlpvim/ctrlp.vim' " fuzzy searching 
-Plugin 'scrooloose/nerdcommenter' "easy comments
-Plugin 'chrisbra/csv.vim' " pretty csv files
-Plugin 'mattn/emmet-vim' " HTML/CSS magic
-Plugin 'ervandew/supertab' " insert mode tab complete 
-Plugin 'danro/rename.vim' " adds :saveas x
-Plugin 'pangloss/vim-javascript' " make javascript nice
-Plugin 'Raimondi/delimitMate' "auto close brackets in insert mode
-Plugin 'vim-latex/vim-latex' " LaTex magic
+Plugin 'VundleVim/Vundle.vim' 		" package manager
+Plugin 'scrooloose/nerdtree' 		" awesome directory
+Plugin 'Lokaltog/vim-powerline' 	" the line at the bottom
+" Plugin 'sheerun/vim-polyglot' 	" Language pack
+Plugin 'Yggdroot/indentLine' 		" shows indent lines
+Plugin 'ctrlpvim/ctrlp.vim' 		" fuzzy searching 
+Plugin 'scrooloose/nerdcommenter' 	" easy comments
+Plugin 'chrisbra/csv.vim' 		" pretty csv files
+" Plugin 'mattn/emmet-vim' 		" HTML/CSS magic
+Plugin 'ervandew/supertab' 		" insert mode tab complete 
+Plugin 'danro/rename.vim' 		" adds :saveas x
+" Plugin 'pangloss/vim-javascript' 	" make javascript nice
+Plugin 'Raimondi/delimitMate' 		"auto close brackets in insert mode
+" Plugin 'vim-latex/vim-latex' 		" LaTex magic
 
 call vundle#end() 
-filetype plugin indent on    
 
 " required
 " To ignore plugin indent changes, instead use:
@@ -43,17 +41,22 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
 
-set number
-filetype plugin indent on
+" misc
 set showcmd
-set mouse=a
+
+" file syntax
 syntax on
+filetype plugin indent on
+
+" for mouse
+set mouse=a
+
+" relative line numbering
+set number
+set relativenumber
 
 " better escape
 inoremap jk <esc>
-
-" for qtcreator
-map rr :run<CR>
 
 " copy and paste with TMUX
 if $TMUX == ''
@@ -77,54 +80,24 @@ vnoremap <Leader>s :sort<CR>o
 vnoremap < <gv
 vnoremap > >gv
 
-" useful
+" history
 set history=700
 set undolevels=700
 
 " search settings
-" set hlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
 " removes search highlight
-" noremap <C-n> :nohl<CR>
-" vnoremap <C-n> :nohl<CR>
-" inoremap <C-n> :nohl<CR>
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
 
 " make blank lines in normal mode
 nmap t o<ESC>k
 nmap T O<ESC>j
-
-" For colorscheme
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin"
-    " Do Mac stuff here
-    colorscheme onedark
-  endif
-endif
-
-
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-" better YML
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 
 " --------Plugin Settings------------------------------------------------------------------
 
