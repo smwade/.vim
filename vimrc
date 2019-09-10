@@ -13,17 +13,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 		" package manager
 Plugin 'scrooloose/nerdtree' 		" awesome directory
 Plugin 'Lokaltog/vim-powerline' 	" the line at the bottom
-" Plugin 'sheerun/vim-polyglot' 	" Language pack
+" Plugin 'sheerun/vim-polyglot' 	" language pack
 Plugin 'Yggdroot/indentLine' 		" shows indent lines
 Plugin 'ctrlpvim/ctrlp.vim' 		" fuzzy searching 
 Plugin 'scrooloose/nerdcommenter' 	" easy comments
 Plugin 'chrisbra/csv.vim' 		" pretty csv files
 " Plugin 'mattn/emmet-vim' 		" HTML/CSS magic
-Plugin 'ervandew/supertab' 		" insert mode tab complete 
+" Plugin 'ervandew/supertab' 		" insert mode tab complete 
 Plugin 'danro/rename.vim' 		" adds :saveas x
 " Plugin 'pangloss/vim-javascript' 	" make javascript nice
-Plugin 'Raimondi/delimitMate' 		"auto close brackets in insert mode
+Plugin 'Raimondi/delimitMate' 		" auto close brackets in insert mode
 " Plugin 'vim-latex/vim-latex' 		" LaTex magic
+Plugin 'tpope/vim-surround' 		" change and add surrond chars easy
+Plugin 'takac/vim-hardtime' 		" to better learn vim
 
 call vundle#end() 
 
@@ -40,6 +42,10 @@ call vundle#end()
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " ------------------------------------------------------------------------------------------
+
+" trial settings
+set path+=** " fuzy search
+set wildmenu " display all tab complete
 
 " misc
 set showcmd
@@ -95,10 +101,6 @@ noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
-" make blank lines in normal mode
-nmap t o<ESC>k
-nmap T O<ESC>j
-
 " --------Plugin Settings------------------------------------------------------------------
 
 " Latex
@@ -140,3 +142,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " for use with omni complete
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 set completeopt-=preview
+
+" hard mode to better learn vim 
+let g:hardtime_default_on = 1
+
