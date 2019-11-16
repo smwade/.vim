@@ -144,5 +144,5 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 set completeopt-=preview
 
 " hard mode to better learn vim 
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
