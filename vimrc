@@ -13,19 +13,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 		" package manager
 Plugin 'scrooloose/nerdtree' 		" awesome directory
 Plugin 'Lokaltog/vim-powerline' 	" the line at the bottom
-" Plugin 'sheerun/vim-polyglot' 	" language pack
 Plugin 'Yggdroot/indentLine' 		" shows indent lines
 Plugin 'ctrlpvim/ctrlp.vim' 		" fuzzy searching 
 Plugin 'scrooloose/nerdcommenter' 	" easy comments
 Plugin 'chrisbra/csv.vim' 		" pretty csv files
-" Plugin 'mattn/emmet-vim' 		" HTML/CSS magic
-" Plugin 'ervandew/supertab' 		" insert mode tab complete 
 Plugin 'danro/rename.vim' 		" adds :saveas x
-" Plugin 'pangloss/vim-javascript' 	" make javascript nice
 Plugin 'Raimondi/delimitMate' 		" auto close brackets in insert mode
-" Plugin 'vim-latex/vim-latex' 		" LaTex magic
 Plugin 'tpope/vim-surround' 		" change and add surrond chars easy
+Plugin 'ervandew/supertab' 		" insert mode tab complete 
 Plugin 'takac/vim-hardtime' 		" to better learn vim
+" Plugin 'sheerun/vim-polyglot' 	" language pack
+" Plugin 'mattn/emmet-vim' 		" HTML/CSS magic
+" Plugin 'pangloss/vim-javascript' 	" make javascript nice
+" Plugin 'vim-latex/vim-latex' 		" LaTex magic
 
 call vundle#end() 
 
@@ -126,17 +126,6 @@ set wildignore+=*/coverage/*
 
 " CSV
 let b:csv_arrange_use_all_rows = 1
-
-" YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_auto_trigger = 0
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_complete_in_strings = 1
-let g:ycm_complete_in_comments = 1 
-let g:ycm_seed_identifiers_with_syntax = 1
 
 " supertab
 " for use with omni complete
